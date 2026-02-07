@@ -53,10 +53,10 @@ for (var i = 1; i <= 5; i++){
     if(compscore == humanScore){
         console.log("IT IS A TIE!!!")
     }
-    if(compscore < humanScore){
-        console.log("YOOOOUUUU LOOOOSSSSSSSSSSEEEEEEEEEE!!!")
-    }
     if(compscore > humanScore){
+        console.log(`YOOOOUUUU LOOOOSSSSSSSSSSEEEEEEEEEE!!!${humanScore}-${compscore}`)
+    }
+    if(compscore < humanScore){
          console.log("you win")
     }
 
