@@ -26,7 +26,14 @@ let compscore = 0;
 
 
 function playRound(humanChoice, compChoice) {
-if(humanChoice == compChoice){
+if(humanScore == 5 ){
+    result.textContent = " player wins";
+}
+else if(compscore == 5){
+    result.textContent = "computer wins";
+
+}
+else if(humanChoice == compChoice){
     result.textContent ="\nIt is a tie\n" + `computer chose: ${compChoice}\nyou chose: ${humanChoice} ` +  " you: " + humanScore + " computer: " + compscore;
 }
 else if(compChoice == "rock" && humanChoice == "scissors" ||
