@@ -1,3 +1,4 @@
+let result = document.querySelector("#result");
 function getComputerChoice() {
  let compChoice = Math.random();
  if (compChoice < .33){
@@ -12,7 +13,7 @@ else if(compChoice >= .66){
     compChoice = "scissors";
     return compChoice;
 }
-
+return compChoice
 }
 
 function getPlayerChoice(){
@@ -22,43 +23,28 @@ function getPlayerChoice(){
     }
 let humanScore = 0;
 let compscore = 0;
-
-function playRound(round, humanChoice, computerChoice) {
-if(humanChoice == computerChoice){
-    console.log("ROUND:" + round + "\nIt is a tie\n" + `computer chose: ${computerChoice}\nyou chose: ${humanChoice} ` +  " you: " + humanScore + " computer: " + compscore);
+function playRound(humanChoice, compChoice) {
+if(humanChoice == compChoice){
+    result.textContent ="\nIt is a tie\n" + `computer chose: ${compChoice}\nyou chose: ${humanChoice} ` +  " you: " + humanScore + " computer: " + compscore;
 }
-else if(computerChoice == "rock" && humanChoice == "scissors" ||
-        computerChoice == "paper" && humanChoice == "rock" ||
-        computerChoice == "scissors" && humanChoice == "paper"){
+else if(compChoice == "rock" && humanChoice == "scissors" ||
+        compChoice == "paper" && humanChoice == "rock" ||
+        compChoice == "scissors" && humanChoice == "paper"){
             compscore += 1;
-console.log("ROUND:" + round + "\nYou lose\n" + `computer chose: ${computerChoice}\nyou chose: ${humanChoice} ` + "you: " + humanScore + " computer: " + compscore)
+result.textContent = "\nYou lose\n" + `computer chose: ${compChoice}\nyou chose: ${humanChoice} ` + "you: " + humanScore + " computer: " + compscore;
 }
 else {
     humanScore += 1;
-console.log("ROUND:" + round + "\nYou win\n" + `computer chose: ${computerChoice}\nyou chose: ${humanChoice} ` + "you: " + humanScore + " computer: " + compscore)
+result.textContent = "\nYou win\n" + `computer chose: ${compChoice}\nyou chose: ${humanChoice} ` + "you: " + humanScore + " computer: " + compscore;
 }
 
-
 }
 
+rock = document.querySelector("#rock");
+rock.addEventListener("click", () => playRound("rock", getComputerChoice()));
+paper = document.querySelector("#paper");
+paper.addEventListener("click", () => playRound("paper", getComputerChoice()));
+rock = document.querySelector("#scissors");
+rock.addEventListener("click", () => playRound("scissors", getComputerChoice()));
 
 
-
-for (var i = 1; i <= 5; i++){
-    let humanSelection = getPlayerChoice();
-    let computerSelection = getComputerChoice();
-    playRound(i, humanSelection, computerSelection)}
-
-    function winner(){
-    if(compscore == humanScore){
-        console.log("IT IS A TIE!!!")
-    }
-    if(compscore > humanScore){
-        console.log(`YOOOOUUUU LOOOOSSSSSSSSSSEEEEEEEEEE!!!${humanScore}-${compscore}`)
-    }
-    if(compscore < humanScore){
-         console.log("you win")
-    }
-
-    }
-    winner()
