@@ -23,6 +23,8 @@ function getPlayerChoice(){
     }
 let humanScore = 0;
 let compscore = 0;
+
+
 function playRound(humanChoice, compChoice) {
 if(humanChoice == compChoice){
     result.textContent ="\nIt is a tie\n" + `computer chose: ${compChoice}\nyou chose: ${humanChoice} ` +  " you: " + humanScore + " computer: " + compscore;
@@ -41,10 +43,10 @@ result.textContent = "\nYou win\n" + `computer chose: ${compChoice}\nyou chose: 
 }
 
 rock = document.querySelector("#rock");
-rock.addEventListener("click", () => playRound("rock", getComputerChoice()));
+rock.addEventListener("click", () =>playRound("rock", getComputerChoice()));
 paper = document.querySelector("#paper");
-paper.addEventListener("click", () => playRound("paper", getComputerChoice()));
+paper.addEventListener("click", () =>playRound("paper", getComputerChoice()));
 rock = document.querySelector("#scissors");
-rock.addEventListener("click", () => playRound("scissors", getComputerChoice()));
+rock.addEventListener("click", () =>playRound("scissors", getComputerChoice()));
 
 
