@@ -44,7 +44,7 @@ result.textContent = "\nYou lose\n" + `computer chose: ${compChoice}\nyou chose:
 }
 else {
     humanScore += 1;
-result.textContent = "\nYou win\n" + `computer chose: ${compChoice}\nyou chose: ${humanChoice} ` + "you: " + humanScore + " computer: " + compscore;
+result.textContent = "\nYou win\n" + `computer chose: ${compChoice  }\nyou chose: ${humanChoice} ` + "you: " + humanScore + " computer: " + compscore;
 }
 
 }
